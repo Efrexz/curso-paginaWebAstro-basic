@@ -1,0 +1,25 @@
+---
+export interface Props{//se hace accesible para que otros archivos puedan importarla y usarla.
+    title: string
+}
+const {title} = Astro.props;//Cuando utilizas Astro.props, estás accediendo a las propiedades pasadas al componente Astro desde otro lugar de tu código . Esto permite que el componente Astro reciba datos externos y los utilice en su lógica interna o para representar contenido dinámico
+---
+
+<h1 id="title">
+    <span class="text-gradient">{title}</span>
+</h1>
+
+<style>
+    #title {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+</style>
